@@ -1,7 +1,11 @@
-- name: restart service and enabled
+- name: restart httpd and enabled
   service:
-    name: 
-        - httpd
-        - mysql
+    name: httpd
+    state: restarted
+    enabled: true
+
+- name: restart mariadb and enabled
+  service:
+    name: mariadb
     state: restarted
     enabled: true
