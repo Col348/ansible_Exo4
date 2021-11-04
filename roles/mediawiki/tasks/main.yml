@@ -23,6 +23,7 @@
   unarchive:
     src: /tmp/mediawiki.tgz
     dest: /tmp
+    remote_src: yes
     owner: "{{ user }}"
     group: "{{ user }}"
 
