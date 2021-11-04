@@ -3,7 +3,7 @@
   yum: name={{ item }} state=present
   with_items:
     - httpd
-    - mariadb
+    - mariadb-server
     - php
     - php-pear
     - php-xml
@@ -13,6 +13,7 @@
     - php-mbstring
     - ImageMagick-perl
     - wget
+  
 
 - name: Download MediaWiki
   get_url:
@@ -54,3 +55,15 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0775
+
+- name: restart httpd
+  service:
+    name: httpd
+    state: restarted
+    enabled: true 
+
+- name: restart mariadb
+  service:
+    name: mariadb
+    state: restarted
+    enabled: true 

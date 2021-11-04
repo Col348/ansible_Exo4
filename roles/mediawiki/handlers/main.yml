@@ -1,0 +1,7 @@
+- name: restart service and enabled
+  service:
+    name: 
+        - httpd
+        - mysql
+    state: restarted
+    enabled: true
